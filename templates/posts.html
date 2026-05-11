@@ -1,31 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>자유게시판</h2>
-  <table>
-    <thead>
+  <h2 style="text-align: center;">자유게시판</h2>
+  <table border="1" style="width: 80%; margin: 0 auto; text-align: center;">
       <tr>
-        <th>번호</th>
-        <th>제목</th>
-        <th>작성자</th>
+        <th style="width: 10%;">번호</th>
+        <th style="width: 50%;">제목</th>
+        <th style="width: 20%;">작성자</th> 
       </tr>
-    </thead>
     <tbody>
       {% for post in posts %}
         <tr>
-          <td>{{ post[0] }}</td>
-          <td><a href="/posts/{{ post[0] }}">{{ post[1] }}</a></td>
+          <td>{{ loop.index }}</td>
+          <td><a href="/posts/{{ post[0] }}" class="post-link">{{ post[1] }}</a></td>
           <td>{{ post[2] }}</td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
   <br>
+  <div style="width: 80%; margin: 20px auto; display: flex; gap: 10px;">
   <form action="/posts/new">
     <button type="submit">게시글 작성</button>
   </form>
-  <br>
   <form action="/">
     <button>메인 화면으로</button>
   </form>
+</div>
 {% endblock %}

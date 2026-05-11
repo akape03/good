@@ -1,0 +1,75 @@
+body {
+    background-color: lightblue;
+}
+th {
+    background-color: white;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+td {
+    background-color: white; 
+}
+.post-link {
+    font-weight: bold; 
+    color: black;      
+    text-decoration: underline; 
+}
+.post-link:hover {
+    color: blue;    
+}
+.btn-link {
+    display: inline-block; 
+    background-color: white;
+    color: black;
+    border: 1px solid black; 
+    font-size: 14px;
+    font-weight: bold;       
+    text-decoration: none;   
+    border-radius: 4px;      
+}
+.btn-link:hover {
+    background-color: lightgrey;     
+}
+.title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black; 
+    display: inline-block; 
+}
+
+.main {
+    background-color: white;
+    border: 1px solid black;
+    font-size: 21px;
+    padding: 10px 20px;
+}
+
+.writer {
+    padding: 1px 10px;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 15px;
+}
+
+.comment {
+    background-color: white;
+    border: 1px solid black;
+    padding: 1px 7px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.fingerman {
+    width: 500px;
+    height: auto;
+    position: relative;
+    top: 180px;
+    left: -350px;
+}

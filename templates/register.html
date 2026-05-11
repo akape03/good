@@ -7,13 +7,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div style="text-align: center; width: 100%;">
   <h2>회원가입</h2>
   <form action="/register" method="post">
-    Username:<br>
-    <input type="text" id="username" name="username">
-    <br><br>
-    Password:<br>
-    <input type="password" id="password" name="password">
+    아이디:
+    <input type="text" id="username" name="username" placeholder="아이디">
+    <br>
+    비밀번호:
+    <input type="password" id="password" name="password" placeholder="비밀번호">
     <br><br>
     <button>회원가입</button>
   </form>
@@ -21,6 +22,7 @@
   <form action="/login">
     <button>로그인 하러가기</button>
   </form>
+</div>
 {% endblock %}
 </body>
 </html>

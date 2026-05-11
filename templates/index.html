@@ -7,14 +7,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>안녕하세요, {{ username }}!</h1>
+<div style="display: flex; gap: 10px; align-items: center;">
+  <p><strong>Welcome, {{ username }}!</strong></p>   
+  <form action="/logout">
+    <button>로그아웃</button>
+  </form>
+</div>
+<div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+
   <form action="/posts">
     <button>자유게시판</button>
   </form>
   <br>
-  <form action="/logout">
-    <button>로그아웃</button>
-  </form>
+    <img src="{{ url_for('static', filename='finger.png') }}" class="fingerman">
+</div>
 {% endblock %}
 </body>
 </html>
