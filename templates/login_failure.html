@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Failed</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>로그인 실패</h1>
+  <form action="/login">
+    <button>다시 시도</button>
+  </form>
+{% endblock %}
+  <p>아이디나 비밀번호가 틀렸습니다.</p>
+</body>
+</html>

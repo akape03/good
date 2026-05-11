@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>LOGIN</h1>
+  <form action="/login" method="post">
+    Username:
+    <input type="text" id="username" name="username">
+    <br>
+    Password:
+    <input type="password" id="password" name="password">
+    <br><br>
+    <button>로그인</button>
+  </form>
+  <br>
+  <form action="/register">
+    <button>회원가입</button>
+  </form>
+{% endblock %}
+</body>
+</html>

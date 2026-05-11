@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>튜터링</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>안녕하세요, {{ username }}!</h1>
+  <form action="/posts">
+    <button>자유게시판</button>
+  </form>
+  <br>
+  <form action="/logout">
+    <button>로그아웃</button>
+  </form>
+{% endblock %}
+</body>
+</html>

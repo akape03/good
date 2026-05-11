@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>게시글 작성</h2>
+  <form action="/posts/new" method="post">
+    제목:
+    <br>
+    <input type="text" id="title" name="title">
+    <br>
+    <br>
+    내용:
+    <br>
+    <textarea type="text" id="content" name="content"></textarea>
+    <br>
+    <button type="submit">등록</button>
+  </form>
+  <br>
+  <form action="/posts">
+    <button>목록으로 돌아가기</button>
+  </form>
+{% endblock %}

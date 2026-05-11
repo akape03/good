@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ post[1] }}</h2>
+  <p>작성자: {{ post[3] }}</p>
+  <pre>{{ post[2] }}</pre>
+  <a href="/posts/{{ post[0] }}/edit">게시글 수정</a>
+  <br>
+  <a href="/posts/{{ post[0] }}/delete">게시글 삭제</a>
+  <br>
+  <br>
+  <a href="/posts">목록으로 돌아가기</a>
+{% endblock %}
