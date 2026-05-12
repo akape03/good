@@ -16,6 +16,7 @@ def init_db():
             title       TEXT NOT NULL,
             content     TEXT NOT NULL,
             author      INTEGER NOT NULL,
+            views       INTEGER DEFAULT 0,
             FOREIGN KEY (author) REFERENCES accounts(id)
         )
     ''')
@@ -56,7 +57,7 @@ def get_all_posts():
     conn = sqlite3.connect('webserver.db')
     cursor = conn.cursor()
     cursor.execute('''
-        SELECT posts.id, posts.title, accounts.username
+        SELECT posts.id, posts.title, accounts.username, posts.views
         FROM posts JOIN accounts
         ON posts.author = accounts.id
     ''')
@@ -74,8 +75,10 @@ def create_post(title, content, author_id):
 def get_post_by_post_id(post_id):
     conn = sqlite3.connect('webserver.db')
     cursor = conn.cursor()
+    cursor.execute('UPDATE posts SET views = views + 1 WHERE id = ?', (post_id,))
+    conn.commit()
     cursor.execute('''
-        SELECT posts.id, posts.title, posts.content, accounts.username
+        SELECT posts.id, posts.title, posts.content, accounts.username, posts.views
         FROM posts JOIN accounts
         ON posts.author = accounts.id
         WHERE posts.id = ?
@@ -118,3 +121,10 @@ def get_comments(post_id):
     comments = cursor.fetchall()
     conn.close()
     return comments
+
+def increment_views(post_id):
+    conn = sqlite3.connect('webserver.db')
+    cursor = conn.cursor()
+    cursor.execute('UPDATE posts SET views = views + 1 WHERE id = ?', (post_id,))
+    conn.commit()
+    conn.close()

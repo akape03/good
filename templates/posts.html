@@ -5,8 +5,9 @@
   <table border="1" style="width: 80%; margin: 0 auto; text-align: center;">
       <tr>
         <th style="width: 10%;">번호</th>
-        <th style="width: 50%;">제목</th>
+        <th style="width: 40%;">제목</th>
         <th style="width: 20%;">작성자</th> 
+        <th style="width: 10%;">조회수</th>
       </tr>
     <tbody>
       {% for post in posts %}
@@ -14,6 +15,7 @@
           <td>{{ loop.index }}</td>
           <td><a href="/posts/{{ post[0] }}" class="post-link">{{ post[1] }}</a></td>
           <td>{{ post[2] }}</td>
+          <td>{{ post[3] }}</td>
         </tr>
       {% endfor %}
     </tbody>
