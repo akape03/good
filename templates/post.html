@@ -5,9 +5,11 @@
   <br>
   <span class="writer">작성자: {{ post[3] }}</span>
   <pre class="main">{{ post[2] }}</pre>
+  {% if session['username'] == post[3] %}
   <a href="/posts/{{ post[0] }}/edit" class="btn-link">게시글 수정</a>
   <br>
   <a href="/posts/{{ post[0] }}/delete" class="btn-link">게시글 삭제</a>
+  {% endif %}
 <hr>
 <h3>댓글</h3>
 <ul>
